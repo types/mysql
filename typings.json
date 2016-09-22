@@ -1,6 +1,6 @@
 {
   "name": "mysql",
-  "version": "",
+  "version": "2.11.1",
   "homepage": "https://github.com/types/npm-mysql",
   "main": "index.d.ts",
   "globalDependencies": {
