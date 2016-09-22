@@ -17,16 +17,11 @@ export function format(sql: string): string;
 export function format(sql: string, values: any[]): string;
 export function format(sql: string, values: any): string;
 
-// Only for typing, not actually exported at runtime!
 export {
-    Connection,
     ConnectionOptions,
     SslOptions,
-    Pool,
     PoolOptions,
-    PoolCluster,
     PoolClusterOptions,
-    Query,
     QueryOptions,
     QueryError
 }

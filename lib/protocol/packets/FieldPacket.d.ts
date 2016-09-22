@@ -1,5 +1,8 @@
 
-declare class FieldPacket {
+declare interface FieldPacket {
+    constructor: {
+        name: 'FieldPacket'
+    };
     catalog: string;
     charsetNr: number;
     db: string;

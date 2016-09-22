@@ -1,5 +1,8 @@
 
-declare class OkPacket {
+declare interface OkPacket {
+    constructor: {
+        name: 'OkPacket'
+    };
     fieldCount: number;
     affectedRows: number;
     changedRows: number;
