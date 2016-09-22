@@ -20,6 +20,18 @@ connection.query('SELECT 1 + 1 AS solution', function (err: mysql.QueryError, ro
     console.log('The solution is: ', rows[0]['solution']);
 });
 
+// multipleStatements
+
+connection.query('SELECT 1 AS x; SELECT 1 AS x; SELECT 1 AS x', function (err: mysql.QueryError, rows: mysql.RowDataPacket[][], fields: mysql.FieldPacket) {
+    if (err) {
+        throw err;
+    }
+
+    console.log(rows[0][0]['x']);
+    console.log(rows[1][0]['x']);
+    console.log(rows[2][0]['x']);
+});
+
 connection.end();
 
 connection = mysql.createConnection({
