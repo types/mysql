@@ -1,5 +1,6 @@
 
 import Connection = require('./Connection');
+import PoolConnection = require('./PoolConnection');
 import {EventEmitter} from 'events';
 
 declare namespace PoolCluster {
@@ -41,15 +42,15 @@ declare class PoolCluster extends EventEmitter {
 
     end(): void;
 
-    getConnection(callback: (err: NodeJS.ErrnoException, connection: Connection) => void): void;
-    getConnection(group: string, callback: (err: NodeJS.ErrnoException, connection: Connection) => void): void;
-    getConnection(group: string, selector: string, callback: (err: NodeJS.ErrnoException, connection: Connection) => void): void;
+    getConnection(callback: (err: NodeJS.ErrnoException, connection: PoolConnection) => void): void;
+    getConnection(group: string, callback: (err: NodeJS.ErrnoException, connection: PoolConnection) => void): void;
+    getConnection(group: string, selector: string, callback: (err: NodeJS.ErrnoException, connection: PoolConnection) => void): void;
 
     of(pattern: string, selector?: string): PoolCluster;
 
     on(event: string, listener: Function): this;
     on(event: 'remove', listener: (nodeId: number) => void): this;
-    on(event: 'connection', listener: (connection: Connection) => void): this;
+    on(event: 'connection', listener: (connection: PoolConnection) => void): this;
 }
 
 export = PoolCluster;

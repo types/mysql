@@ -2,6 +2,7 @@
 import Query = require('./protocol/sequences/Query');
 import {OkPacket, RowDataPacket, FieldPacket} from './protocol/packets/index';
 import Connection = require('./Connection');
+import PoolConnection = require('./PoolConnection');
 import {EventEmitter} from 'events';
 
 declare namespace Pool {
@@ -37,7 +38,7 @@ declare class Pool extends EventEmitter {
 
     config: Pool.PoolOptions;
 
-    getConnection(callback: (err: NodeJS.ErrnoException, connection: Connection) => any): void;
+    getConnection(callback: (err: NodeJS.ErrnoException, connection: PoolConnection) => any): void;
 
     query(sql: string, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
     query(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
@@ -47,7 +48,7 @@ declare class Pool extends EventEmitter {
     end(callback?: (err: NodeJS.ErrnoException, ...args: any[]) => any): void;
 
     on(event: string, listener: Function): this;
-    on(event: 'connection', listener: (connection: Connection) => any): this;
+    on(event: 'connection', listener: (connection: PoolConnection) => any): this;
 }
 
 export = Pool;

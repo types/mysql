@@ -218,7 +218,6 @@ declare class Connection extends EventEmitter {
 
     pause(): void;
 
-    release(): void;
     resume(): void;
 
     escape(value: any): string;
