@@ -37,14 +37,14 @@ declare class Pool extends EventEmitter {
 
     config: Pool.PoolOptions;
 
-    getConnection(callback: (err: Error, connection: Connection) => any): void;
+    getConnection(callback: (err: NodeJS.ErrnoException, connection: Connection) => any): void;
 
     query(sql: string, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
     query(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
     query(options: Query.QueryOptions, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
     query(options: Query.QueryOptions, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
 
-    end(callback?: (err: Error, ...args: any[]) => any): void;
+    end(callback?: (err: NodeJS.ErrnoException, ...args: any[]) => any): void;
 
     on(event: string, listener: Function): this;
     on(event: 'connection', listener: (connection: Connection) => any): this;

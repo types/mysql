@@ -247,7 +247,7 @@ poolCluster.end();
 
 query = connection.query('SELECT * FROM posts');
 query
-    .on('error', function (err: Error) {
+    .on('error', function (err: NodeJS.ErrnoException) {
         // Handle error, an 'end' event will be emitted after this as well
     })
     .on('fields', function (fields: any) {
@@ -376,7 +376,7 @@ connection.query('SELECT 1', function (err: mysql.QueryError, rows: mysql.RowDat
     console.log(rows.length); // 1
 });
 
-connection.on('error', function (err: Error) {
+connection.on('error', function (err: NodeJS.ErrnoException) {
     console.log(err.code); // 'ER_BAD_DB_ERROR'
 });
 
