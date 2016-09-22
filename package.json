@@ -11,6 +11,7 @@
   "author": "Felix Becker <felix.b@outlook.com>",
   "license": "ISC",
   "devDependencies": {
+    "mysql": "~2.11.1",
     "tslint": "^3.13.0",
     "typedoc": "^0.4.5",
     "typescript": "^1.8.10",
