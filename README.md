@@ -3,7 +3,7 @@
 
 Typescript Typings for [mysql](https://www.npmjs.com/package/mysql).
 
-## [API Documentation](http://typed-mysql-js.surge.sh)
+## [API Documentation](http://typed-mysql.surge.sh)
 
 ## Installation
 ```sh
