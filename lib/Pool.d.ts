@@ -40,12 +40,12 @@ declare class Pool extends EventEmitter {
 
     getConnection(callback: (err: NodeJS.ErrnoException, connection: PoolConnection) => any): void;
 
-    query(sql: string, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
-    query(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
-    query(options: Query.QueryOptions, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
-    query(options: Query.QueryOptions, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    query(sql: string, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    query(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    query(options: Query.QueryOptions, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    query(options: Query.QueryOptions, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
 
-    end(callback?: (err: NodeJS.ErrnoException, ...args: any[]) => any): void;
+    end(callback?: (err: NodeJS.ErrnoException | null, ...args: any[]) => any): void;
 
     on(event: string, listener: Function): this;
     on(event: 'connection', listener: (connection: PoolConnection) => any): this;

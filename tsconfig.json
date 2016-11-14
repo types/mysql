@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
+    "strictNullChecks": true,
     "target": "es2015",
-    "module": "commonjs"
+    "module": "commonjs",
+    "typeRoots": [
+      "typings/globals",
+      "typings/modules"
+    ]
   }
 }

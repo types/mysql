@@ -42,9 +42,9 @@ declare class PoolCluster extends EventEmitter {
 
     end(): void;
 
-    getConnection(callback: (err: NodeJS.ErrnoException, connection: PoolConnection) => void): void;
-    getConnection(group: string, callback: (err: NodeJS.ErrnoException, connection: PoolConnection) => void): void;
-    getConnection(group: string, selector: string, callback: (err: NodeJS.ErrnoException, connection: PoolConnection) => void): void;
+    getConnection(callback: (err: NodeJS.ErrnoException | null, connection: PoolConnection) => void): void;
+    getConnection(group: string, callback: (err: NodeJS.ErrnoException | null, connection: PoolConnection) => void): void;
+    getConnection(group: string, selector: string, callback: (err: NodeJS.ErrnoException | null, connection: PoolConnection) => void): void;
 
     of(pattern: string, selector?: string): PoolCluster;
 

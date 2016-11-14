@@ -195,24 +195,24 @@ declare class Connection extends EventEmitter {
     config: Connection.ConnectionOptions;
     threadId: number;
 
-    static createQuery(sql: string, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
-    static createQuery(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    static createQuery(sql: string, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    static createQuery(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
 
-    beginTransaction(callback: (err?: Query.QueryError) => void): void;
+    beginTransaction(callback: (err: Query.QueryError | null) => void): void;
 
-    connect(callback?: (err?: Query.QueryError) => void): void;
+    connect(callback?: (err: Query.QueryError | null) => void): void;
 
-    commit(callback?: (err?: Query.QueryError) => void): void;
+    commit(callback?: (err: Query.QueryError | null) => void): void;
 
-    changeUser(options: Connection.ConnectionOptions, callback?: (err?: Query.QueryError) => void): void;
+    changeUser(options: Connection.ConnectionOptions, callback?: (err: Query.QueryError | null) => void): void;
 
-    query(sql: string, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
-    query(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
-    query(options: Query.QueryOptions, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields?: FieldPacket[]) => any): Query;
-    query(options: Query.QueryOptions, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    query(sql: string, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    query(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    query(options: Query.QueryOptions, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields?: FieldPacket[]) => any): Query;
+    query(options: Query.QueryOptions, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
 
-    end(callback?: (err: Query.QueryError) => void): void;
-    end(options: any, callback?: (err?: Query.QueryError) => void): void;
+    end(callback?: (err: Query.QueryError | null) => void): void;
+    end(options: any, callback?: (err: Query.QueryError | null) => void): void;
 
     destroy(): void;
 

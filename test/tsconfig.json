@@ -2,7 +2,12 @@
   "compilerOptions": {
     "target": "es5",
     "noImplicitAny": true,
-    "module": "commonjs"
+    "strictNullChecks": true,
+    "module": "commonjs",
+    "typeRoots": [
+      "../typings/globals",
+      "../typings/modules"
+    ]
   },
   "files": [
     "test.ts",

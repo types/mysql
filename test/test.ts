@@ -358,26 +358,34 @@ connection = mysql.createConnection({
 });
 
 connection.connect(function (err) {
-    console.log(err.code); // 'ECONNREFUSED'
-    console.log(err.fatal); // true
+    if (err) {
+        console.log(err.code); // 'ECONNREFUSED'
+        console.log(err.fatal); // true
+    }
 });
 
 connection.query('SELECT 1', function (err) {
-    console.log(err.code); // 'ECONNREFUSED'
-    console.log(err.fatal); // true
+    if (err) {
+        console.log(err.code); // 'ECONNREFUSED'
+        console.log(err.fatal); // true
+    }
 });
 
 connection.query('USE name_of_db_that_does_not_exist', function (err, rows) {
-    console.log(err.code); // 'ER_BAD_DB_ERROR'
+    if (err) {
+        console.log(err.code); // 'ER_BAD_DB_ERROR'
+    }
 });
 
-connection.query('SELECT 1', function (err: mysql.QueryError, rows: mysql.RowDataPacket[]) {
+connection.query('SELECT 1', function (err: mysql.QueryError | null, rows: mysql.RowDataPacket[]) {
     console.log(err); // null
     console.log(rows.length); // 1
 });
 
-connection.on('error', function (err: NodeJS.ErrnoException) {
-    console.log(err.code); // 'ER_BAD_DB_ERROR'
+connection.on('error', function (err: NodeJS.ErrnoException | null) {
+    if (err) {
+        console.log(err.code); // 'ER_BAD_DB_ERROR'
+    }
 });
 
 connection.query('USE name_of_db_that_does_not_exist');
