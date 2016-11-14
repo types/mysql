@@ -195,8 +195,8 @@ declare class Connection extends EventEmitter {
     config: Connection.ConnectionOptions;
     threadId: number;
 
-    static createQuery(sql: string, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
-    static createQuery(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    static createQuery<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(sql: string, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
+    static createQuery<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
 
     beginTransaction(callback: (err: Query.QueryError | null) => void): void;
 
@@ -206,10 +206,10 @@ declare class Connection extends EventEmitter {
 
     changeUser(options: Connection.ConnectionOptions, callback?: (err: Query.QueryError | null) => void): void;
 
-    query(sql: string, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
-    query(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
-    query(options: Query.QueryOptions, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields?: FieldPacket[]) => any): Query;
-    query(options: Query.QueryOptions, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[], fields: FieldPacket[]) => any): Query;
+    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(sql: string, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
+    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
+    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(options: Query.QueryOptions, callback?: (err: Query.QueryError | null, result: T, fields?: FieldPacket[]) => any): Query;
+    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(options: Query.QueryOptions, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
 
     end(callback?: (err: Query.QueryError | null) => void): void;
     end(options: any, callback?: (err: Query.QueryError | null) => void): void;
