@@ -29,6 +29,7 @@ export * from './lib/protocol/packets/index'
 
 // Expose class interfaces
 export interface Connection extends Connection {}
+export interface PoolConnection extends PoolConnection {}
 export interface Pool extends Pool {}
 export interface PoolCluster extends PoolCluster {}
 export interface Query extends Query {}
