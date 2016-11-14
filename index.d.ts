@@ -26,3 +26,9 @@ export {
     QueryError
 }
 export * from './lib/protocol/packets/index'
+
+// Expose class interfaces
+export interface Connection extends Connection {}
+export interface Pool extends Pool {}
+export interface PoolCluster extends PoolCluster {}
+export interface Query extends Query {}
