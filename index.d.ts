@@ -1,6 +1,7 @@
 
 import Connection = require('./lib/Connection');
 import {ConnectionOptions, SslOptions} from './lib/Connection';
+import PoolConnection = require('./lib/PoolConnection');
 import Pool = require('./lib/Pool');
 import {PoolOptions} from './lib/Pool';
 import PoolCluster = require('./lib/PoolCluster');
