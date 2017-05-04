@@ -25,8 +25,8 @@ export {
     PoolClusterOptions,
     QueryOptions,
     QueryError
-}
-export * from './lib/protocol/packets/index'
+};
+export * from './lib/protocol/packets/index';
 
 // Expose class interfaces
 export interface Connection extends Connection {}
