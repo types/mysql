@@ -7,4 +7,4 @@ export {
     OkPacket,
     RowDataPacket,
     FieldPacket
-}
+};
