@@ -12,7 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "mysql": "~2.13.0",
-    "tslint": "^5.2.0",
+    "tslint": "5.4.3",
     "typedoc": "^0.7.0",
     "typescript": "^2.0.3",
     "typings": "^2.1.1"
