@@ -1,7 +1,7 @@
 # Typed mysql
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/types/npm-mysql.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/types/npm-mysql.svg?branch=master)](https://travis-ci.org/types/npm-mysql)
+[![Greenkeeper badge](https://badges.greenkeeper.io/types/mysql.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/types/mysql.svg?branch=master)](https://travis-ci.org/types/mysql)
 
 Typescript Typings for [mysql](https://www.npmjs.com/package/mysql).
 
@@ -10,6 +10,10 @@ Typescript Typings for [mysql](https://www.npmjs.com/package/mysql).
 ## Installation
 ```sh
 typings install --save mysql
+```
+or
+```sh
+npm install --save-dev types/mysql#semver:version
 ```
 
 ## Usage

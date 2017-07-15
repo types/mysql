@@ -1,6 +1,6 @@
 {
   "name": "@types/mysql",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Typings for mysql",
   "scripts": {
     "build": "typings bundle -o test/bundle.d.ts",
