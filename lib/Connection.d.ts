@@ -113,9 +113,11 @@ declare namespace Connection {
 
         /**
          * Force date types (TIMESTAMP, DATETIME, DATE) to be returned as strings rather then inflated into JavaScript Date
-         * objects. (Default: false)
+         * objects. Can be true/false or an array of type names to keep as strings.
+         *
+         * (Default: false)
          */
-        dateStrings?: boolean;
+        dateStrings?: boolean | Array<'TIMESTAMP' | 'DATETIME' | 'DATE'>;
 
         /**
          * This will print all incoming and outgoing packets on stdout.
