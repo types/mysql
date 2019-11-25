@@ -17,6 +17,8 @@ declare interface FieldPacket {
     table: string;
     type: number;
     zerofill: boolean;
+    buffer: Function;
+    string: Function;
 }
 
 export = FieldPacket;
