@@ -19,6 +19,7 @@ declare interface FieldPacket {
     zerofill: boolean;
     buffer: Function;
     string: Function;
+    geometry: Function;
 }
 
 export = FieldPacket;
