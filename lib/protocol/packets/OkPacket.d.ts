@@ -1,5 +1,5 @@
 
-declare interface OkPacket extends Array<Object> {
+declare interface OkPacket <T> extends Array<Object> {
     constructor: {
         name: 'OkPacket'
     };
