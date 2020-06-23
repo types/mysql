@@ -1,6 +1,6 @@
 
 import Query = require('./protocol/sequences/Query');
-import {OkPacket, RowDataPacket, FieldPacket} from './protocol/packets/index';
+import {OkPacket, RowDataPacket, FieldPacket, ResultSetHeader} from './protocol/packets/index';
 import Connection = require('./Connection');
 import PoolConnection = require('./PoolConnection');
 import {EventEmitter} from 'events';
@@ -51,10 +51,10 @@ declare class Pool extends EventEmitter {
 
     getConnection(callback: (err: NodeJS.ErrnoException, connection: PoolConnection) => any): void;
 
-    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(sql: string, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
-    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
-    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(options: Query.QueryOptions, callback?: (err: Query.QueryError | null, result: T, fields?: FieldPacket[]) => any): Query;
-    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(options: Query.QueryOptions, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
+    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[] | ResultSetHeader>(sql: string, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
+    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[] | ResultSetHeader>(sql: string, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
+    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[] | ResultSetHeader>(options: Query.QueryOptions, callback?: (err: Query.QueryError | null, result: T, fields?: FieldPacket[]) => any): Query;
+    query<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[] | ResultSetHeader>(options: Query.QueryOptions, values: any | any[] | { [param: string]: any }, callback?: (err: Query.QueryError | null, result: T, fields: FieldPacket[]) => any): Query;
 
     end(callback?: (err: NodeJS.ErrnoException | null, ...args: any[]) => any): void;
 
