@@ -1,0 +1,6 @@
+.editorconfig
+.travis.yml
+/test/
+/typedoc/
+tslint.json
+build
