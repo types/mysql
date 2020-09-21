@@ -1,17 +1,11 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "strictNullChecks": true,
     "module": "commonjs",
-    "typeRoots": [
-      "../typings/globals",
-      "../typings/modules"
-    ]
   },
   "files": [
-    "test.ts",
-    "bundle.d.ts",
-    "../typings/index.d.ts"
+    "test.ts"
   ]
 }

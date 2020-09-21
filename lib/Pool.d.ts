@@ -31,7 +31,7 @@ declare namespace Pool {
          * is no limit to the number of queued connection requests. (Default: 0)
          */
         queueLimit?: number;
-        
+
         /**
          * Enable keep-alive on the socket.  It's disabled by default, but the
          * user can enable it and supply an initial delay.

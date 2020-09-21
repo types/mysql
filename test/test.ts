@@ -1,6 +1,6 @@
 
 import * as fs from 'fs';
-import * as mysql from 'mysql';
+import * as mysql from '../index';
 import * as stream from 'stream';
 
 // Connections
